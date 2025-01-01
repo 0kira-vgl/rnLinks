@@ -31,7 +31,7 @@ export default function App() {
         contentContainerStyle={{ gap: 20, padding: 24, paddingBottom: 100 }}
       />
 
-      <Modal transparent visible>
+      <Modal transparent visible={false}>
         <View className="flex-1 justify-end">
           <View
             className="bg-GRAY-900 pb-12 p-6"

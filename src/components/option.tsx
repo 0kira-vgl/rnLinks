@@ -1,10 +1,5 @@
 import { MaterialIcons } from "@expo/vector-icons";
-import {
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  View,
-} from "react-native";
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { colors } from "../styles/colors";
 import { twMerge } from "tailwind-merge";
 
