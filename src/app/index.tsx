@@ -5,13 +5,17 @@ import { Link } from "../components/link";
 import { colors } from "../styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Option } from "../components/option";
+import { useState } from "react";
+import { categories } from "../utils/categories";
 
 export default function App() {
+  const [category, setCategory] = useState(categories[0].name);
+
   return (
     <View className="flex-1 pt-[62]">
       <Header />
 
-      <Categories />
+      <Categories onChange={setCategory} selected={category} />
 
       <FlatList
         data={["1", "2", "3"]}

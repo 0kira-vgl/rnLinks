@@ -5,14 +5,28 @@ import { colors } from "@/src/styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TouchableOpacity, View } from "react-native";
 
 export default function Add() {
+  const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
 
   function handleAdd() {
-    console.log({ name, url });
+    if (!category) {
+      return Alert.alert("Categoria", "Selecione a categoria");
+    }
+
+    // "trim()" remove o caracter "espaço"
+    if (!name.trim()) {
+      return Alert.alert("Nome", "Preencha o nome");
+    }
+
+    if (!url.trim()) {
+      return Alert.alert("URL", "Preencha a URL");
+    }
+
+    console.log({ category, name, url });
   }
 
   return (
@@ -29,7 +43,7 @@ export default function Add() {
         Selecione uma categoria
       </Text>
 
-      <Categories />
+      <Categories onChange={setCategory} selected={category} />
 
       <View className="px-6 py-3 gap-4">
         <Input
