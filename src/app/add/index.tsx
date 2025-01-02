@@ -58,7 +58,11 @@ export default function Add() {
         Selecione uma categoria
       </Text>
 
-      <Categories onChange={setCategory} selected={category} />
+      <Categories
+        onChange={setCategory}
+        selected={category}
+        exclude={["Todos"]} // remove a categoria "Todos" dessa tela
+      />
 
       <View className="px-6 py-3 gap-4">
         <Input

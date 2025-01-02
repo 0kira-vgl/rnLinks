@@ -27,7 +27,10 @@ export default function App() {
   async function getLinks() {
     try {
       const response = await linkStorage.get();
-      const filtered = response.filter((link) => link.category === category);
+      const filtered =
+        category === "Todos"
+          ? response
+          : response.filter((link) => link.category === category);
 
       setLinks(filtered);
     } catch (error) {

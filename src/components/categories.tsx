@@ -1,16 +1,26 @@
 import { FlatList } from "react-native";
-import { categories } from "../utils/categories";
+import { categories as allCategories } from "../utils/categories";
 import { Category } from "./category";
 
 type CategoriesProps = {
   selected: string;
   onChange: (category: string) => void;
+  exclude?: string[]; // add para permitir exclusões
 };
 
-export function Categories({ selected, onChange }: CategoriesProps) {
+export function Categories({
+  selected,
+  onChange,
+  exclude = [],
+}: CategoriesProps) {
+  // filtra as categorias, excluindo as especificadas
+  const filteredCategories = allCategories.filter(
+    (category) => !exclude.includes(category.name)
+  );
+
   return (
     <FlatList
-      data={categories}
+      data={filteredCategories}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Category

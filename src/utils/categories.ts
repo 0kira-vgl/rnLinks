@@ -9,31 +9,36 @@ type CategoryProps = {
 export const categories: CategoryProps[] = [
   {
     id: "1",
+    name: "Todos",
+    icon: "all-inclusive",
+  },
+  {
+    id: "2",
     name: "Curso",
     icon: "code",
   },
   {
-    id: "2",
+    id: "3",
     name: "Projeto",
     icon: "folder",
   },
   {
-    id: "3",
+    id: "4",
     name: "Site",
     icon: "language",
   },
   {
-    id: "4",
+    id: "5",
     name: "Artigo",
     icon: "newspaper",
   },
   {
-    id: "5",
+    id: "6",
     name: "Vídeo",
     icon: "movie",
   },
   {
-    id: "6",
+    id: "7",
     name: "Documentação",
     icon: "content-paste",
   },

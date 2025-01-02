@@ -35,4 +35,3 @@ export function Category({ icon, name, isSelected, ...rest }: CategoryProps) {
     </Pressable>
   );
 }
-// border-GREEN-300
