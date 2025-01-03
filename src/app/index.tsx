@@ -63,7 +63,7 @@ export default function App() {
 
   async function handleOpen() {
     try {
-      await Linking.openURL(link.url);
+      await Linking.canOpenURL(link.url);
       setShowModal(false);
     } catch (error) {
       Alert.alert("Link", "Não foi possível abrir o link.");
@@ -99,6 +99,16 @@ export default function App() {
           borderTopColor: colors.gray[600],
         }}
         contentContainerStyle={{ gap: 20, padding: 24, paddingBottom: 100 }}
+        ListEmptyComponent={() => {
+          return (
+            <View className="flex-1 justify-center items-center flex-row gap-2">
+              <MaterialIcons name="link" size={20} color={colors.gray[300]} />
+              <Text className="text-gray-300 text-lg">
+                Nenhum link cadastrado
+              </Text>
+            </View>
+          );
+        }}
       />
 
       <Modal transparent visible={showModal} animationType="slide">
